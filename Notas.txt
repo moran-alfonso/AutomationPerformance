@@ -1,0 +1,4 @@
+#1 Crear script de python que ejecute la conversión de .har a .js con comandos de K6 LISTO!
+
+#2 Crear una función que permita  filtrar el tipo de ML agente  #Pedir a Alfonso Ríos lista
+#3 Crear una forma de hacer dinamica la página de IssuePAge para que varie conforme el tipo de agente de  ML
