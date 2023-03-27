@@ -150,6 +150,32 @@ class APM_APIs:
 
         return ready_issues
    
+    def filter_ML_data(self, ml_data: List, filter: str) -> list:
+
+        if filter == "Normal":
+            Ml_filtered_data = [item for item in ml_data if item["ML_type"] not in ["Maestro", "EXTERNAL_ML_AGENT"]]
+
+        elif filter in ["Maestro", "EXTERNAL_ML_AGENT"]:
+            Ml_filtered_data = [item for item in ml_data if item["ML_type"] == filter]
+
+        else: 
+            Ml_filtered_data = []
+
+        return Ml_filtered_data
+
+    def all_filtered_ML_data(self, ml_data: List) -> dict:
+
+        ML = {"Normal": [],
+              "Maestro": [],
+              "External": []}
+        
+        ML["Normal"] = self.filter_ML_data(ml_data, "Normal")
+        ML["Maestro"] = self.filter_ML_data(ml_data, "Maestro")
+        ML["External"] = self.filter_ML_data(ml_data, "EXTERNAL_ML_AGENT")
+
+        return ML
+        
+
 
 
 
