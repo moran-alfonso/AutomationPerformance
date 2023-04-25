@@ -1,3 +1,13 @@
 # Crear una forma de hacer dinamica la página de IssuePage para que varie conforme el tipo de agente de  ML
-# Grabar por separado el Dashboard y el IssuePage
+# Revisar como extraer las fechas (fecha de alerta), timeline, sensor, agent
+        ## El timeline es de 105 días en week
+        ## Tomar fecha de la alerta, sumarle 42 días para el enddate, restar 63 días para el startdate
+            #Si la fecha final supera el día actual entonces a la fecha actual se le restan 105 días
+        # Para la barra azul, tomar la fecha de alerta, restarle 28 días para el incio y sumarle 7 para el final    
+            # Si la fecha final supera el día actual entonces a la fecha actual se le restan 35 días
+
+# Sustituir el issue Id en las URL
+# Sustituir el agent Id del agente
+# Sustituir los sensor Id
+# Sustituir los TimeLine
 # Ver cómo manipular las fechas del timeline

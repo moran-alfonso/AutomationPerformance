@@ -9,7 +9,7 @@ from typing import List
 
 
 
-class Writer:
+class Single_Writer:
 
     def __init__(self, username: str, password: str, domain: str) -> None:
         self.username   = username
@@ -236,3 +236,24 @@ class Writer:
 
         self.add_check_codes()
         self.add_codes_in_checks(har_file)
+
+    def name_group(self, group_name: str) -> None:
+        regex = "(?<=group\(')(.*)(?=',)"
+        modified_body = []
+        
+        for i, line in enumerate(self.body):
+
+            if self.find_pattern(regex, line):
+
+                new_line = self.replace_regex(line, regex, group_name)
+            
+            else:
+
+                new_line = line
+
+            modified_body.append(new_line)
+
+        self.body = modified_body
+
+    def split_group(self, where_split: str) -> None:
+        pass
