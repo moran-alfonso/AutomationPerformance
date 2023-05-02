@@ -7,7 +7,7 @@ from typing import List, Dict, Any
 urllib3.disable_warnings()
 
 
-class APM_APIs:
+class APIs:
 
     def __init__(self, username: str, password: str, domain: str) -> None:
         """
@@ -401,4 +401,7 @@ class APM_APIs:
         ML["External"] = self.filter_ML_data(ml_data, "EXTERNAL_ML_AGENT")
 
         return ML
+    
+    
+
         
